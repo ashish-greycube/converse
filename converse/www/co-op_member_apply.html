@@ -18,12 +18,12 @@
     <!-- greycube -->
 
     <script>
-		window.frappe = {};
-		frappe.ready_events = [];
-		frappe.ready = function(fn) {
-			frappe.ready_events.push(fn);
-		}
-		window.dev_server = 0;
+        window.frappe = {};
+        frappe.ready_events = [];
+        frappe.ready = function (fn) {
+            frappe.ready_events.push(fn);
+        }
+        window.dev_server = 0;
     </script>
     <!-- end greycube -->
 </head>
@@ -590,9 +590,12 @@
     <script type="text/javascript" src="/assets/js/frappe-web.min.js"></script>
     <!-- <script type="text/javascript" src="/website_script.js"></script> -->
     <script type="text/javascript" src="/assets/js/erpnext-web.min.js"></script>
-
     <script>
         window.onload = function () {
+            if (frappe.session.user == 'Guest') {
+                frappe.csrf_token = undefined
+            }
+
             var conversationalForm = window.cf.ConversationalForm.startTheConversation({
                 formEl: document.getElementById("form"),
                 context: document.getElementById("cf-context"),
@@ -650,9 +653,7 @@
             });
         };
     </script>
-    <!-- greycube -->
     <!-- csrf_token -->
-    <!-- end greycube -->
 </body>
 
 </html>
