@@ -39,6 +39,8 @@
 
     <main class="content">
         <menu id="small-screen-menu">
+
+            
             <h2>Empowery Membership Application</h2>
 
             <div class="switch-btn">
@@ -85,6 +87,7 @@
             </div>
 
             <article>
+                    <img src="/assets/converse/image/empowery_logo-e1518911614389.png">
                 <h1 id="writer">
                     Empowery Cooperative Application.
                 </h1>
@@ -645,10 +648,11 @@
                                 conversationalForm.addRobotChatResponse(
                                     "We have received your application. You will soon hear from us. Thanks!  " +
                                     args.fname);
+                                    
                             } else {
                                 conversationalForm.addRobotChatResponse(
-                                    "something went wrong..we are not able to receive your application at present. Please try later."
-                                )
+                                    "Something went wrong..we are not able to receive your application at present. Please try later."
+                                );
                             }
                         }
                     });
