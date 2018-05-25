@@ -12,13 +12,11 @@
             height: 0px;
             overflow: hidden;
         }
-            main.content .conversational-form cf-chat-response.robot thumb {
-                background-size: cover;    
-            }
-            
-        
-    </style>
 
+        main.content .conversational-form cf-chat-response.robot thumb {
+            background-size: cover;
+        }
+    </style>
     <title>Empowery Membership Application</title>
     <script type="text/javascript" src="/assets/converse/js/conversational-form.min.js"></script>
     <!-- greycube -->
@@ -36,11 +34,10 @@
 
 <body>
     <script src="/assets/converse/js/conversational-form-examples.min.js" id="examples-script"></script>
-
     <main class="content">
         <menu id="small-screen-menu">
 
-            
+
             <h2>Empowery Membership Application</h2>
 
             <div class="switch-btn">
@@ -87,7 +84,7 @@
             </div>
 
             <article>
-                    <img src="/assets/converse/image/empowery_logo-e1518911614389.png">
+                <img src="/assets/converse/image/empowery_logo-e1518911614389.png">
                 <h1 id="writer">
                     Empowery Cooperative Application.
                 </h1>
@@ -117,137 +114,81 @@
             <div class="form-outer">
 
                 <form id="form">
-                    <cf-robot-message cf-questions="Hi, I am Steve"></cf-robot-message>
-                    <fieldset cf-input-placeholder="Click on Continue above" cf-questions="Please read our by-laws to understand how our coopertive works before applying."
+
+                    <cf-robot-message cf-questions="Hi, I am Empowery Bot"></cf-robot-message>
+                    <cf-robot-message cf-questions=" I’m here to help you.  😊"></cf-robot-message>
+                    <fieldset cf-input-placeholder="Click on 'Agree and Continue' above" cf-questions=" Please read our by-laws and agree to them to be sure you know how our cooperative works before applying."
                         name="signup" id="signup">
-                        <input type="radio" id="signup" name="signup" value="yes" cf-label="Continue" />
+                        <input type="radio" id="signup" name="signup" value="yes" cf-label="Agree and Continue" />
                     </fieldset>
 
 
                     <fieldset>
-                        <cf-robot-message cf-questions="Thanks! for your interest in joining"></cf-robot-message>
+                        <cf-robot-message cf-questions="Thanks for your interest in joining. This will go quickly."></cf-robot-message>
                         <label for="fname">What's your first name?</label>
                         <input required cf-questions="What's your first name?* " type="text" class="form-control" name="fname" id="fname">
                     </fieldset>
 
                     <fieldset>
                         <label for="lname">What's your last name?</label>
-                        <input required cf-questions="Great to meet you, {previous-answer}! What's your last name?*" type="text" class="form-control"
+                        <input required cf-questions="Great to meet you, {previous-answer}, What's your last name?*" type="text" class="form-control"
                             name="lname" id="lname">
                     </fieldset>
 
                     <fieldset>
                         <label for="legalname">Corporate
                             <b>legal name</b>?</label>
-                        <input required cf-questions="Corporate legal name?*" type="text" class="form-control" name="legalname" id="legalname">
+                        <input required cf-questions="What is your company legal name?*" type="text" class="form-control" name="legalname" id="legalname">
                     </fieldset>
 
                     <fieldset>
                         <label for="dba">
                             <b>DBA</b>?</label>
-                        <input cf-questions="<b>DBA</b>?" type="text" class="form-control" name="dba" id="dba">
-                    </fieldset>
+                        <input cf-input-placeholder="If you don’t have one press ENTER to continue" cf-questions="Please share your Doing Business As name? (DBA)"
+                            type="text" class="form-control" name="dba" id="dba">
+                    </fieldset> -->
 
                     <fieldset>
                         <label for="email">Email</label>
-                        <input pattern=".+\@.+\..+" cf-error="E-mail not correct" cf-questions="Please give me your email*" type="email" class="form-control"
-                            name="email" id="email">
+                        <input pattern=".+\@.+\..+" cf-error="E-mail not correct" cf-questions="What is your email address?* (Don’t worry - we don’t spam people.)"
+                            type="email" class="form-control" name="email" id="email">
                     </fieldset>
 
                     <fieldset>
                         <label for="web">website</label>
-                        <input pattern="^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$" cf-error="Hmm...that web address doesn't exist"
-                            cf-questions="What is company's primary web address?*" type="text" class="form-control" name="web"
-                            id="web">
+                        <input cf-input-placeholder="If you don’t have one press ENTER to continue" cf-questions=" What is your company website address?"
+                            type="url" class="form-control" name="web" id="web">
                     </fieldset>
 
                     <fieldset>
                         <label for="additionalweb">Additional
                             <b> websites</b> if any?</label>
-                        <input cf-questions="Additional websites if any" type="text" class="form-control" name="additionalweb" id="additionalweb">
+                        <input cf-conditional-web="." cf-input-placeholder="If you don’t have one press ENTER to continue" cf-questions=" List any additional websites separated by commas if you have more than one."
+                            type="text" class="form-control" name="additionalweb" id="additionalweb">
                     </fieldset>
 
                     <fieldset>
                         <label for="streetaddress">
                             <b>Street Address</b>?</label>
-                        <input required cf-questions="What is your street address?*" type="text" class="form-control" name="streetaddress" id="streetaddress">
+                        <input required cf-questions="Please provide us with your street address line 1*" type="text" class="form-control" name="streetaddress1"
+                            id="streetaddress1">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="streetaddress">
+                            <b>Street Address</b>?</label>
+                        <input cf-questions="Please provide us with your street address line 2 if applicable" type="text" class="form-control" name="streetaddress2"
+                            id="streetaddress2">
                     </fieldset>
 
                     <fieldset>
                         <label for="state">State/Province</label>
-                        <select cf-questions="What is your state?*" name="state" id="state" class="form-control">
-                            <option value="None">Doesn't apply</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AB">Alberta</option>
-                            <option value="BC">British Columbia</option>
-                            <option value="MB">Manitoba</option>
-                            <option value="NB">New Brunswick</option>
-                            <option value="NL">Newfoundland and Labrador</option>
-                            <option value="NS">Nova Scotia</option>
-                            <option value="NT">Northwest Territories</option>
-                            <option value="NU">Nunavut</option>
-                            <option value="ON">Ontario</option>
-                            <option value="PE">Prince Edward Island</option>
-                            <option value="QC">Quebec</option>
-                            <option value="SK">Saskatchewan</option>
-                            <option value="YT">Yukon</option>
-                            <option value="Choice52">Choice 52</option>
-                        </select>
+                        <input required cf-questions="What is your state or province?*" type="text" name="state" id="state" class="form-control">
                     </fieldset>
 
                     <fieldset>
                         <label for="country">Country</label>
-                        <select cf-questions="What is your country?*" id="country" name="country" class="form-control">
+                        <select required cf-questions="What is your country?*" id="country" name="country" class="form-control">
                             <option value="United States" selected="">United States</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
@@ -497,28 +438,29 @@
 
                     <fieldset>
                         <label for="zip">zip code</label>
-                        <input pattern="^[0-9]*$" cf-error="Hmm...it should be only numbers" cf-questions="Zip Code or Postal Code*" type="text"
+                        <input required pattern="^[0-9]*$" cf-error="Hmm...it should be only numbers" cf-questions="What is your postal code?*" type="number"
                             class="form-control" name="zip" id="zip">
                     </fieldset>
                     <fieldset>
 
-                        <fieldset>
+                        <!-- <fieldset>
                             <label for="phone">Your moblie telephone number??</label>
                             <input required cf-questions="Your moblie telephone number?*" type="text" class="form-control" name="phone" id="phone">
-                        </fieldset>
+                        </fieldset>  -->
 
                         <fieldset cf-questions="How would you rate your knowledge of Internet Selling?*" name="sellrating" id="sellrating">>
-                            <input type="radio" id="star5" name="rating" value="5" cf-label="5 Best" />
-                            <input type="radio" id="star4" name="rating" value="4" cf-label="4 V Good" />
+                            <input type="radio" id="star5" name="rating" value="5" cf-label="5 Excellent" />
+                            <input type="radio" id="star4" name="rating" value="4" cf-label="4 Very Good" />
                             <input type="radio" id="star3" name="rating" value="3" cf-label="3 Medium" />
-                            <input type="radio" id="star2" name="rating" value="2" cf-label="2 Starter" />
-                            <input type="radio" id="star1" name="rating" value="1" cf-label="1 Just begin" />
+                            <input type="radio" id="star2" name="rating" value="2" cf-label="2 Ok" />
+                            <input type="radio" id="star1" name="rating" value="1" cf-label="1 Just starting" />
                         </fieldset>
 
                         <fieldset>
                             <label for="ratingreason">
                                 <b>Rating reason</b>?</label>
-                            <input required cf-questions="Why you rate yourself that way?*" type="text" class="form-control" name="ratingreason" id="ratingreason">
+                            <input required cf-questions="You said you are, ' {previous-answer} ' , why would you rate yourself that way?*" type="text"
+                                class="form-control" name="ratingreason" id="ratingreason">
                         </fieldset>
 
                         <fieldset>
@@ -531,20 +473,21 @@
                         <fieldset>
                             <label for="contribute">
                                 <b>Your contribution</b>?</label>
-                            <input required cf-questions="How can you contribute to make Empowery better?*" type="text" class="form-control" name="contribute"
-                                id="contribute">
+                            <cf-robot-message cf-questions='<img src="/assets/converse/image/zig_quote.png" alt="You can have everything in life you want, if you will just help other people get what they want. - Zig Ziglar ">                &mdash;  Zig Ziglar'></cf-robot-message>
+                            <input required cf-questions="So, in that context, how can you contribute to make Empowery better?*" type="text" class="form-control"
+                                name="contribute" id="contribute">
                         </fieldset>
 
                         <fieldset>
                             <label for="vendorinterest">
                                 <b>Vendor Interested In</b>?</label>
-                            <input required cf-questions="What vendors or type of vendors are you most interested in working with?* Feel free to add vendors or type of vendors we don't currently work with."
+                            <input required cf-questions=" What vendors or types of vendors are you most interested in working with?* Feel free to name any vendor you feel strongly about."
                                 type="text" class="form-control" name="vendorinterest" id="vendorinterest">
                         </fieldset>
 
                         <fieldset>
                             <label for="yearsinbusiness">Years in business</label>
-                            <select cf-questions="How many years have you been in business?*" name="yearsinbusiness" id="yearsinbusiness" class="form-control">
+                            <select required cf-questions="How many years have you been in business?*" name="yearsinbusiness" id="yearsinbusiness" class="form-control">
                                 <option value="Less than 1">Less than one year</option>
                                 <option value="1">1 year</option>
                                 <option value="2">2 years</option>
@@ -555,33 +498,35 @@
 
                         <fieldset>
                             <label for="saleslastyear">Sales last year</label>
-                            <input pattern="^[0-9]*$" cf-error="Hmm...it should be only numbers" cf-questions="And what's your sales volume last year?*"
-                                type="text" class="form-control" name="saleslastyear" id="saleslastyear">
+                            <input required pattern="^[0-9]*$" cf-error="Hmm...it should be only numbers" cf-questions="And what’s your sales volume for last calendar year?*"
+                                type="number" class="form-control" name="saleslastyear" id="saleslastyear">
                         </fieldset>
 
                         <fieldset>
                             <label for="salescurrentyear">Sales current year</label>
-                            <input pattern="^[0-9]*$" cf-error="Hmm...it should be only numbers" cf-questions="What is your projected sales volume this year?*"
-                                type="text" class="form-control" name="salescurrentyear" id="salescurrentyear">
+                            <input required pattern="^[0-9]*$" cf-error="Hmm...it should be only numbers" cf-questions="What’s your projected sales volume for this calendar year?*"
+                                type="number" class="form-control" name="salescurrentyear" id="salescurrentyear">
                         </fieldset>
 
                         <fieldset>
                             <label for="anythingelse">Anything else?</label>
-                            <input cf-questions="Anything else we should know?" type="text" class="form-control" name="anythingelse" id="anythingelse">
+                            <input cf-input-placeholder="If nothing, press ENTER to continue" cf-questions="Is there anything else you want to share with the membership team?"
+                                type="text" class="form-control" name="anythingelse" id="anythingelse">
                         </fieldset>
 
                         <fieldset>
                             <label for="referredby">Referred you?</label>
-                            <input cf-questions="Who referred you?" type="text" class="form-control" name="referredby" id="referredby">
+                            <input cf-input-placeholder="If none, press ENTER to continue" cf-questions="Who referred you?" type="text" class="form-control"
+                                name="referredby" id="referredby">
                         </fieldset>
 
-                        <fieldset cf-questions="You understand that the cost to join the cooperative is $1000 plus a $250 a month membership fee.*"
+                        <fieldset cf-questions="Do you understand the cost to join the cooperative is a one time $1000.00 fee plus a $250.00 per month membership fee?*"
                             name="costtojoin" id="costtojoin">>
                             <input type="radio" id="yes" name="costtojoin" value="yes" cf-label="Yes" />
                             <input type="radio" id="no" name="costtojoin" value="no" cf-label="No" />
                         </fieldset>
 
-                        <fieldset cf-questions="To be a shareholder, there is an additional cost of $1000 per one share of stock. This would entitle you to patronage dividends (rebates). If you ever choose to leave the Cooperative, you're share is returned for $1000. Do you wish to be a shareholder?*"
+                        <fieldset cf-questions="To be an equity member shareholder there is an additional cost of $1000.00 for one share of stock. This would entitle you to earn patronage dividends (aka - rebates). If you ever choose to leave the cooperative you’re share would be returned to the coop and you would receive your $1000 back. NOTE: Shares do not appreciate in value. Do you wish to become a shareholder to earn rebates?*"
                             name="costtobeshareholder" id="costtobeshareholder">>
                             <input type="radio" id="yes" name="costtobeshareholder" value="yes" cf-label="Yes" />
                             <input type="radio" id="no" name="costtobeshareholder" value="no" cf-label="No" />
@@ -599,6 +544,7 @@
     <script type="text/javascript" src="/assets/js/frappe-web.min.js"></script>
     <!-- <script type="text/javascript" src="/website_script.js"></script> -->
     <script type="text/javascript" src="/assets/js/erpnext-web.min.js"></script>
+
     <script>
         window.onload = function () {
             if (frappe.session.user == 'Guest') {
@@ -608,7 +554,7 @@
             var conversationalForm = window.cf.ConversationalForm.startTheConversation({
                 formEl: document.getElementById("form"),
                 context: document.getElementById("cf-context"),
-                robotImage: "/assets/converse/image/steve.jpg",
+                robotImage: "/assets/converse/image/bot.png",
                 submitCallback: function () {
                     var args = conversationalForm.getFormData(true);
 
@@ -621,11 +567,12 @@
                         "Email: " + args.email + "\n" +
                         "Primary website: " + args.web + "\n" +
                         "Additional website: " + args.additionalweb + "\n" +
-                        "Street address: " + args.streetaddress + "\n" +
+                        "Street address 1: " + args.streetaddress1 + "\n" +
+                        "Street address 2: " + args.streetaddress2 + "\n" +
                         "State: " + args.state + "\n" +
                         "Country: " + args.country + "\n" +
                         "Zip code: " + args.zip + "\n" +
-                        "Phone: " + args.phone + "\n" +
+                        // "Phone: " + args.phone + "\n" +
                         "Internet selling rating: " + args.sellrating + "\n" +
                         "Reason behind selling rating: " + args.ratingreason + "\n" +
                         "Reason to join empowery: " + args.reasontojoin + "\n" +
@@ -646,9 +593,10 @@
                         callback: function (r) {
                             if (r.message == "okay") {
                                 conversationalForm.addRobotChatResponse(
-                                    "We have received your application. You will soon hear from us. Thanks!  " +
-                                    args.fname);
-                                    
+                                    "We have received your application. Thank you sincerely for your time and interest. You will hear from us very soon. We’re at your service."
+                                );
+
+
                             } else {
                                 conversationalForm.addRobotChatResponse(
                                     "Something went wrong..we are not able to receive your application at present. Please try later."
