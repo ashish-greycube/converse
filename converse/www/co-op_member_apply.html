@@ -101,9 +101,9 @@
                 </h3>
 
                 <footer>
-                    <h3>
+                    <h4>
                         <a href="index.html" target="_self">Back to Main Site</a>
-                    </h3>
+                    </h4>
 
 
                 </footer>
@@ -443,10 +443,10 @@
                     </fieldset>
                     <fieldset>
 
-                        <!-- <fieldset>
+                        <fieldset>
                             <label for="phone">Your moblie telephone number??</label>
-                            <input required cf-questions="Your moblie telephone number?*" type="text" class="form-control" name="phone" id="phone">
-                        </fieldset>  -->
+                            <input required cf-questions="Hey, {fname} what’s your mobile number?*" type="text" class="form-control" name="phone" id="phone">
+                        </fieldset> 
 
                         <fieldset cf-questions="How would you rate your knowledge of Internet Selling?*" name="sellrating" id="sellrating">>
                             <input type="radio" id="star5" name="rating" value="5" cf-label="5 Excellent" />
@@ -474,7 +474,7 @@
                             <label for="contribute">
                                 <b>Your contribution</b>?</label>
                             <cf-robot-message cf-questions='<img src="/assets/converse/image/zig_quote.png" alt="You can have everything in life you want, if you will just help other people get what they want. - Zig Ziglar ">                &mdash;  Zig Ziglar'></cf-robot-message>
-                            <input required cf-questions="So, in that context, how can you contribute to make Empowery better?*" type="text" class="form-control"
+                            <input required cf-questions="So {fname}, in the context of one of our favorite quotes shown above from Zig Ziglar, how do you think you can contribute to make Empowery better?*" type="text" class="form-control"
                                 name="contribute" id="contribute">
                         </fieldset>
 
@@ -572,7 +572,7 @@
                         "State: " + args.state + "\n" +
                         "Country: " + args.country + "\n" +
                         "Zip code: " + args.zip + "\n" +
-                        // "Phone: " + args.phone + "\n" +
+                        "Phone: " + args.phone + "\n" +
                         "Internet selling rating: " + args.sellrating + "\n" +
                         "Reason behind selling rating: " + args.ratingreason + "\n" +
                         "Reason to join empowery: " + args.reasontojoin + "\n" +
@@ -595,11 +595,16 @@
                                 conversationalForm.addRobotChatResponse(
                                     "We have received your application. Thank you sincerely for your time and interest. You will hear from us very soon. We’re at your service."
                                 );
-
+                                conversationalForm.addRobotChatResponse(
+                                "You’re all done. Click the BACK TO MAIN SITE on your left ☚ to go back to the Empowery main page."
+                                );
 
                             } else {
                                 conversationalForm.addRobotChatResponse(
                                     "Something went wrong..we are not able to receive your application at present. Please try later."
+                                );
+                                conversationalForm.addRobotChatResponse(
+                                "You’re all done. Click the BACK TO MAIN SITE on your left ☚ to go back to the Empowery main page."
                                 );
                             }
                         }
